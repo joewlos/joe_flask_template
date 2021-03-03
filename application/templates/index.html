@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+<!-- Content -->
+{% block content %}
+	<div class='text-center mt-1'>
+		<h1>Joe Wlos - Flask Template</h1>
+		<h2>{{ time }}</h2>
+		{% if username %}
+			<h2>Welcome, {{ username }}!</h2>
+		{% endif %}
+	</div>
+{% endblock %}
