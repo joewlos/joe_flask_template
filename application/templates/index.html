@@ -8,5 +8,9 @@
 		{% if username %}
 			<h2>Welcome, {{ username }}!</h2>
 		{% endif %}
+		{% if data['i'] and data['ip'] and data['browser'] and data['time'] %}
+			<h2>Session: {{ data['i'] }} at {{ data['time'] }}</h2>
+			<h2>User: {{ data['browser']|title }} on {{ data['ip'] }}</h2>
+		{% endif %}
 	</div>
 {% endblock %}

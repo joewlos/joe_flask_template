@@ -6,8 +6,6 @@ FLASK APPLICATION
 from flask import Flask
 from flask_login import LoginManager
 from flask_session import Session
-import glob
-import os
 
 # Import configuration
 from config import Config
@@ -18,7 +16,7 @@ from application.models.user import User
 
 # Initialize login manager and session
 login_manager = LoginManager()
-# sess = Session()
+sess = Session()
 
 
 '''
@@ -40,7 +38,7 @@ def create_app():
     # Initialize Plugins
     db.init_app(app)
     login_manager.init_app(app)
-    # sess.init_app(app)
+    sess.init_app(app)
 
     # Add the login manager to all routes
     @login_manager.user_loader

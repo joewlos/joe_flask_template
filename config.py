@@ -12,7 +12,7 @@ load_dotenv()
 
 
 '''
-CLASSES
+CLASS
 '''
 class Config:
     '''
@@ -24,9 +24,10 @@ class Config:
     # General configuration
     SECRET_KEY = environ.get('SECRET_KEY')
 
-    # Flask session
-    # SESSION_TYPE = environ.get('SESSION_TYPE')
-    # SESSION_REDIS = redis.from_url(environ.get('SESSION_REDIS'))
+    # Redis
+    SESSION_TYPE = environ.get('SESSION_TYPE')
+    SESSION_REDIS = redis.from_url(environ.get('SESSION_REDIS'))
+    PERMANENT_SESSION_LIFETIME = 30  # Seconds
 
     # Database
     SQLALCHEMY_DATABASE_URI = environ.get('DATABASE_URL')
