@@ -1,0 +1,45 @@
+name: joe_flask_template
+channels:
+  - defaults
+dependencies:
+  - ca-certificates=2021.1.19=hecd8cb5_0
+  - certifi=2020.12.5=py37hecd8cb5_0
+  - libcxx=10.0.0=1
+  - libedit=3.1.20191231=h1de35cc_1
+  - libffi=3.3=hb1e8313_2
+  - ncurses=6.2=h0a44026_1
+  - openssl=1.1.1j=h9ed2024_0
+  - pip=21.0.1=py37hecd8cb5_0
+  - python=3.7.10=h88f2d9e_0
+  - readline=8.1=h9ed2024_0
+  - setuptools=52.0.0=py37hecd8cb5_0
+  - sqlite=3.33.0=hffcf06c_0
+  - tk=8.6.10=hb0a8c7a_0
+  - wheel=0.36.2=pyhd3eb1b0_0
+  - xz=5.2.5=h1de35cc_0
+  - zlib=1.2.11=h1de35cc_3
+  - pip:
+    - astroid==2.5.1
+    - cachelib==0.1.1
+    - click==7.1.2
+    - flask==1.1.2
+    - flask-login==0.5.0
+    - flask-session==0.3.2
+    - flask-sqlalchemy==2.4.4
+    - gunicorn==20.0.4
+    - isort==5.7.0
+    - itsdangerous==1.1.0
+    - jinja2==2.11.3
+    - lazy-object-proxy==1.5.2
+    - markupsafe==1.1.1
+    - mccabe==0.6.1
+    - psycopg2-binary==2.8.6
+    - pylint==2.7.2
+    - python-dotenv==0.15.0
+    - redis==3.5.3
+    - sqlalchemy==1.3.23
+    - toml==0.10.2
+    - typed-ast==1.4.2
+    - werkzeug==1.0.1
+    - wrapt==1.12.1
+prefix: /Users/joewlos/opt/anaconda3/envs/joe_flask_template
