@@ -33,3 +33,4 @@ Execute the following command to run tests for the routes:
 ```
 $ python -m unittest discover
 ```
+This template includes a user test by default.
