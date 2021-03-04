@@ -11,6 +11,10 @@
     - models
         - shared.py
         - user.py
+    - testing
+        - tests_base.py
+        - user
+            - tests.py
     - static
         - css
             - sytlesheet.css
