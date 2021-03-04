@@ -4,6 +4,7 @@ APPLICATION ROUTES BLUEPRINT
 '''
 # Import required packages
 from datetime import datetime
+import json
 from flask import (
     Blueprint, 
     render_template, 
@@ -14,6 +15,9 @@ from flask import (
 from flask import current_app as app
 from flask_login import current_user
 import random
+
+# Import models
+from application.models.traceroute import TraceRouteRaw
 
 # Create the blueprint
 views = Blueprint(
@@ -75,3 +79,29 @@ def example_session():
     session['ip'] = request.environ['REMOTE_ADDR']
     session['browser'] = request.user_agent.browser
     return '{0} at {1}'.format(i, timestamp)
+
+
+'''
+MARCH 4 WORK
+'''
+@views.route('/parse_traceroute', methods=['POST'])
+def parse_traceroute():
+    '''
+    Parse POSTed raw traceroute text and add to database
+    '''
+    data = json.loads(request.data)['data']
+    row = TraceRouteRaw(raw_string=data)
+
+    # Add to both the raw and parsed datasets
+    row.create_new_traceroute()
+    row_id = row.store_parsed_traceroute()
+
+    # Return the id of the new data and 200 status code
+    response = app.response_class(
+        response=json.dumps({
+            'id': row_id
+        }),
+        status=200,
+        mimetype='application/json'
+    )
+    return response
