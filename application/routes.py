@@ -26,6 +26,7 @@ views = Blueprint(
 EXAMPLE ROUTES
 '''
 @views.route('/')
+@views.route('/index')
 def index():
     '''
     Return an example template with the time

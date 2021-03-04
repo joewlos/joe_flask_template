@@ -12,7 +12,7 @@ load_dotenv()
 
 
 '''
-CLASS
+DEVELOPMENT AND PRODUCTION
 '''
 class Config:
     '''
@@ -32,3 +32,14 @@ class Config:
     # Database
     SQLALCHEMY_DATABASE_URI = environ.get('DATABASE_URL')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+
+'''
+TESTING
+'''
+class Testing(Config):
+    '''
+    Adjust configuration for testing
+    '''
+    TESTING = True
+    WTF_CSRF_ENABLED = False

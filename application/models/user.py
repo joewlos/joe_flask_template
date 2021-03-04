@@ -16,6 +16,10 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String(100))
     name = db.Column(db.String(1000))
 
+    # Representation
+    def __repr__(self):
+        return '<email %r>' % self.email
+
     # Hash the password when setting
     def set_password(self, secret):
         self.password = generate_password_hash(secret)
