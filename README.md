@@ -23,3 +23,9 @@
 ```
 #### ENVIRONMENT
 `requirements.txt` contains the packages for pip installation. If using Anaconda to manage packages, create a new environment named `joe_flask_template` from `conda_environment.txt`.
+
+#### TESTING
+Execute the following command to run tests for the routes:
+```
+$ python -m unittest discover
+```
